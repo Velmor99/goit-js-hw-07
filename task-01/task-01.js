@@ -1,5 +1,5 @@
 const lis = document.querySelectorAll('.item');
-console.log(lis)
+console.log(`В списке ${lis.length} категории`);
 lis.forEach(li => {
     const title = li.querySelector("h2").textContent;
     const numberOfItem = li.querySelectorAll("li").length;

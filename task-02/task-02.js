@@ -7,29 +7,17 @@ const ingredients = [
     'Приправы',
   ];
 
-// const _ul = document.querySelector('#ingredients');
-// console.log(_ul)
+const _ul = document.querySelector('#ingredients');
+console.log(_ul)
 
-// function createLis(arr) {
-//     return arr.map(el => `<li>${el}</li>`)
-// }
-// console.log(createLis(ingredients));
+function createLis(arr) {
+    return arr.map(el => {
+      const listItem = document.createElement('li');
+      listItem.textContent = el;
+      return listItem;
+    })
+}
 
 
-const _ul = document.querySelector('#ingredients')
-
-const listOne = document.createElement('li');
-listOne.textContent = ingredients[0];
-const listTwo = document.createElement('li');
-listTwo.textContent = ingredients[1];
-const listThree = document.createElement('li');
-listThree.textContent = ingredients[2];
-const listFour = document.createElement('li');
-listFour.textContent = ingredients[3];
-const listFive = document.createElement('li');
-listFive.textContent = ingredients[4];
-const listSix = document.createElement('li');
-listSix.textContent = ingredients[5];
-
-_ul.append(listOne, listTwo, listThree, listFour, listFive, listSix);
+_ul.append(...createLis(ingredients));
 
